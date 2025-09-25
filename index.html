@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Enigma Óptico — Treino Consultivo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" as="image" href="img/store-day.png">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="app" aria-live="polite">
+        <header class="hud" role="banner">
+            <div class="hud-left">
+                <h1>Enigma Óptico</h1>
+                <p id="sceneLabel" class="muted">Cena</p>
+            </div>
+            <div class="hud-right">
+                <span id="scoreLabel" class="tag">0 pts</span>
+                <button id="btnPlayAgain" class="primary">Jogar de novo</button>
+                <button id="btnRestart" class="ghost hidden" aria-label="Recomeçar">Recomeçar</button>
+            </div>
+        </header>
+        
+        <section id="jogo-tela" class="stage" role="region" aria-label="Cena do jogo">
+            <!-- Fundo da loja -->
+            <img id="bg" class="bg" alt="Ambiente da loja de óculos" />
+
+            <!-- Sprite da cliente (canto direito) -->
+            <img id="sprite" class="sprite hidden" alt="Cliente na loja" />
+
+            <!-- Balão/Diálogo (lado esquerdo com espaço) -->
+            <div class="dialog2">
+                <p id="sceneText"></p>
+            </div>
+            <div class="dialog">
+                <p>Dica:</p>
+                <small id="sceneHint" class="muted"></small>
+            </div>
+        </section>
+
+        <nav id="jogo-resp" class="choices" aria-label="Opções">
+            <button id="opt1" class="choice" data-idx="0"></button>
+            <button id="opt2" class="choice" data-idx="1"></button>
+            <button id="opt3" class="choice" data-idx="2"></button>
+        </nav>
+
+        <!-- Resultado & Relatório -->
+        <section id="result" class="result" role="region" aria-label="Relatório">
+            <div class="result-header">
+                <h2 id="finalBadge" class="final-badge"></h2>
+                <p id="finalScore" class="final-score"></p>
+            </div>
+
+            <div class="grid hidden">
+                <article class="card">
+                    <h3>🧭 Caminho percorrido</h3>
+                    <ol id="pathList" class="path-list"></ol>
+                </article>
+
+                <article class="card">
+                    <h3>🎯 Competências trabalhadas</h3>
+                    <table id="skillsTable" class="skills">
+                        <thead>
+                            <tr>
+                                <th>Competência</th>
+                                <th>Pontos</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </article>
+            </div>
+
+            <article id="recom" class="card hidden">
+                <h3>💡 Recomendações</h3><br>
+                <ul id="recoList" class="reco-list"></ul>
+            </article>
+
+            <div class="actions">
+                <div class="hidden">
+                    <div class="spacer"></div>
+                    <button id="btnDownloadCSV" class="ghost">Baixar CSV</button>
+                    <button id="btnDownloadJSON" class="ghost">Baixar JSON</button>
+                    <button id="btnDownloadHTML" class="ghost">Baixar HTML</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="game.js" defer></script>
+</body>
+
+</html>
