@@ -7,10 +7,10 @@
 const ASSETS = {
     bgDay: "img/fundoloja.png",
     bgNight: "img/fundoloja.png", // se tiver noturno, troque por "img/store-night.png"
-    spriteNeutral: "img/desconfianca.png",
+    spriteNeutral: "img/mtfeliz.png",
     spriteSmile: "img/feliz.png",
-    spriteDoubt: "img/desconfianca.png",
-    spriteSuspicious: "img/feliz.png",
+    spriteDoubt: "img/curiosa.png",
+    spriteSuspicious: "img/desconfianca.png",
 };
 
 /* ---------- HELPERS ---------- */
