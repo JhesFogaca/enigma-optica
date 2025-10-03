@@ -503,7 +503,7 @@ function render(nodeId) {
 
     // cena
     setBackground();
-    setSprite(node.sprite || "neutral");
+    setSprite(node.sprite || "smile");
     $sprite.classList.remove("hidden");
     requestAnimationFrame(() => $sprite.classList.add("show"));
 
