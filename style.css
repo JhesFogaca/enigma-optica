@@ -21,28 +21,30 @@
 
 html,
 body {
-    height: 100%;
+    height: 100vh;
 }
 
 body {
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font: 16px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    /*padding-top: 50px;*/
 }
 
 .app {
     max-width: 1100px;
     margin: 0px auto;
-    padding: 16px;
     display: grid;
     gap: 14px;
+    
 }
 
 h1 {
-    font-size: 1.75rem;
-    margin: 0 0 2px;
+    font-size: 1.85rem;
+    margin: 0 0 30px;
     color: #ca8c05;
+    line-height: 1;
 }
 
 h2 {
@@ -59,9 +61,9 @@ h3 {
 }
 
 .tag {
-    background: #11161c;
+    background: var(--card-2);
     color: var(--text);
-    padding: 6px 10px;
+    padding: 4px 6px;
     border-radius: 10px;
 }
 
@@ -99,7 +101,7 @@ h3 {
     padding: 10px 14px;
     border-radius: 12px;
     cursor: pointer;
-    box-shadow: 0 6px 18px rgba(187, 180, 179, 0.212);
+    box-shadow: 0 6px 18px rgba(122, 119, 119, 0.212);
 }
 
 .primary:hover {
@@ -113,6 +115,7 @@ h3 {
     min-height: 420px;
     background: var(--card);
     border: 1px solid #20242e;
+    
 }
 
 .bg {
@@ -122,6 +125,7 @@ h3 {
     height: 100%;
     object-fit: cover;
     filter: brightness(.95);
+    
 }
 
 .sprite {
@@ -202,19 +206,22 @@ h3 {
     gap: 10px;
     grid-template-columns: 1fr;
     margin-top: -2px;
+    
 }
 
 .choice {
     border: 0;
     border-radius: 12px;
     padding: 14px 16px;
-    font-weight: 700;
+    font-weight: 400;
     cursor: pointer;
     background: linear-gradient(180deg, #1f2430, #12161d);
     color: var(--text);
     outline: 2px solid transparent;
     outline-offset: 2px;
     transition: transform .12s ease, outline-color .12s ease, box-shadow .2s ease;
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
 .choice:hover,
@@ -308,5 +315,56 @@ h3 {
 
     .grid {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(min-width: 360px) {
+
+    .sprite {
+        right: -100px;
+        bottom: -20%;
+    }
+
+    .dialog {
+        left: clamp(12px, 3vw, 24px);
+        top: clamp(10px, 3vw, 24px);
+        max-width: min(90%, 600px);
+        padding: 8px 8px;
+        
+
+    }
+
+    .dialog2 {
+        right: clamp(185px, 3vw, 24px);
+        top: clamp(170px, 3vw, 24px);
+        max-width: min(58%, 600px);
+        margin-left: 10px;
+        font-size: 20px;
+    }
+
+    .choices {
+        letter-spacing: 1px;
+        gap: 8px;
+    }
+    .choice {
+        font-size: 14px;
+    }
+
+    .tag {
+        text-align: center;
+        border-radius: 50px;
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    .stage {
+        min-height: 340px;
+        margin-top: -20px;
+    }
+    .app {
+        padding: 10px 10px 0;
+    }
+    .muted1{
+        font-size: 12px;
     }
 }
